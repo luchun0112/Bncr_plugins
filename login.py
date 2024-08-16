@@ -180,7 +180,7 @@ async def logon_main(chromium_path, workList, uid, headless):
                 workList[uid].msg = "正在过形状、颜色检测"
                 #await verification_shape(page)
                 #await page.waitFor(3000)
-                print("点选无法验证通过，退出")
+                print("无法验证通过，退出")
                 break
                 
             if not sms_sent:
@@ -752,4 +752,4 @@ async def main(workList, uid, oocr):
     os.remove("rgba_word_img.png") if os.path.exists("rgba_word_img.png") else None
     os.remove("rgb_word_img.png") if os.path.exists("rgb_word_img.png") else None
     print("登录完成")
-    await asyncio.sleep(5)
+    await asyncio.sleep(3)
