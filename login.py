@@ -173,14 +173,16 @@ async def logon_main(chromium_path, workList, uid, headless):
                 await verification(page)
                 await page.waitFor(3000)
 
-            elif False and await page.xpath('//*[@id="captcha_modal"]/div/div[3]/button'):
+            elif await page.xpath('//*[@id="captcha_modal"]/div/div[3]/button'):
                 print("进入点形状、颜色验证分支")
 
                 workList[uid].status = "pending"
                 workList[uid].msg = "正在过形状、颜色检测"
-                await verification_shape(page)
-                await page.waitFor(3000)
-
+                #await verification_shape(page)
+                #await page.waitFor(3000)
+                print("点选无法验证通过，退出")
+                break
+                
             if not sms_sent:
                 if await page.J(".sub-title"):
                     print("进入选择短信验证分支")
