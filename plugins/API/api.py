@@ -127,7 +127,7 @@ async def check():
         elif status == "pending":
             r = mr(status, msg="正在处理中，请等待")
         elif status == "error":
-            r = mr(status, msg="登陆失败，请在10秒后重试：" + workList[uid].msg)
+            r = mr(status, msg="登陆失败，请10秒后重试：" + workList[uid].msg)
         elif status == "SMS":
             r = mr(status, msg="需要短信验证")
         elif status == "wrongSMS":
