@@ -752,4 +752,4 @@ async def main(workList, uid, oocr):
     os.remove("rgba_word_img.png") if os.path.exists("rgba_word_img.png") else None
     os.remove("rgb_word_img.png") if os.path.exists("rgb_word_img.png") else None
     print("登录完成")
-    await asyncio.sleep(10)
+    await asyncio.sleep(5)
