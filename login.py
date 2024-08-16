@@ -181,6 +181,7 @@ async def logon_main(chromium_path, workList, uid, headless):
                 #await verification_shape(page)
                 #await page.waitFor(3000)
                 workList[uid].status = "jump"
+                workList[uid].msg = "无法验证通过，请重新登陆"
                 print("无法验证通过，退出")
                 break
                 
