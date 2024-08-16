@@ -146,7 +146,7 @@ async def logon_main(chromium_path, workList, uid, headless):
         try:
             now_time = datetime.datetime.now()
             print("循环检测中...")
-            if (now_time - start_time).total_seconds() > 20:
+            if (now_time - start_time).total_seconds() > 120:
                 print("进入超时分支")
                 workList[uid].status = "error"
                 workList[uid].msg = "登录超时"
@@ -177,9 +177,11 @@ async def logon_main(chromium_path, workList, uid, headless):
                 print("进入点形状、颜色验证分支")
 
                 workList[uid].status = "pending"
-                workList[uid].msg = "正在过形状、颜色检测"
-                await verification_shape(page)
-                await page.waitFor(3000)
+                #workList[uid].msg = "正在过形状、颜色检测"
+                workList[uid].msg = "无法通过，直接退出"
+                #await verification_shape(page)
+                #await page.waitFor(3000)
+                break
 
             if not sms_sent:
                 if await page.J(".sub-title"):
