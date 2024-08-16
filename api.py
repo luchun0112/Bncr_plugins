@@ -132,6 +132,8 @@ async def check():
             r = mr(status, msg="需要短信验证")
         elif status == "wrongSMS":
             r = mr(status, msg="短信验证错误，请重新输入")
+        elif status == "jump":
+            r = mr(status, msg="点选验证错误，请重新登陆")
         else:
             r = mr("error", msg="笨蛋开发者，忘记适配新状态啦：" + status)
     # 账号列表无记录
