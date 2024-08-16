@@ -178,7 +178,7 @@ async def logon_main(chromium_path, workList, uid, headless):
 
                 workList[uid].status = "error"
                 workList[uid].msg = "验证失败"
-                print("点选验证失败，退出")
+                print("点选验证失败")
                 break
                 
             if not sms_sent:
