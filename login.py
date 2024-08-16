@@ -176,10 +176,11 @@ async def logon_main(chromium_path, workList, uid, headless):
             elif await page.xpath('//*[@id="captcha_modal"]/div/div[3]/button'):
                 print("进入点形状、颜色验证分支")
 
-                workList[uid].status = "pending"
-                workList[uid].msg = "正在过形状、颜色检测"
+                #workList[uid].status = "pending"
+                #workList[uid].msg = "正在过形状、颜色检测"
                 #await verification_shape(page)
                 #await page.waitFor(3000)
+                workList[uid].status = "jump"
                 print("无法验证通过，退出")
                 break
                 
