@@ -177,7 +177,7 @@ async def logon_main(chromium_path, workList, uid, headless):
                 print("进入点形状、颜色验证分支")
 
                 workList[uid].status = "error"
-                workList[uid].msg = "验证失败"
+                workList[uid].msg = "点选验证失败"
                 print("点选验证失败")
                 break
                 
